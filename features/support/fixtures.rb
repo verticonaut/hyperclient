@@ -17,79 +17,81 @@ module Spinach
 
     def posts_response
       '{
-          [
-              {
-                "title": "My first blog post",
-                "body":  "Lorem ipsum dolor sit amet",
-                "authors": [
-                  {
-                    "name": "Author1",
-                    "_links": {
-                      "self": { "href": "/authors/1" }
-                    },
-                  }
-                ],
-                "_links": {
-                  "self": { "href": "/posts/1" },
-                  "authors": { "href": "/posts/1/authors" },
-                },
-                "_meta": {
-                  "type": post,
-                  "total_posts": "2",
-                  "editablility": {
-                    "title": false,
-                    "body":  true
-                  }
-                }
-              },
-              {
-                "title": "My second blog post",
-                "body":  "Lorem ipsum dolor sit amet",
-                "authors": [
-                  {
-                    "name": "Author1",
-                    "_links": {
-                      "self": { "href": "/authors/1" }
-                    },
+          "data": [
+            {
+              "title": "My first blog post",
+              "body":  "Lorem ipsum dolor sit amet",
+              "authors": [
+                {
+                  "name": "Author1",
+                  "_links": {
+                    "self": { "href": "/authors/1" }
                   },
-                  {
-                    "name": "Author2",
-                    "_links": {
-                      "self": { "href": "/authors/2" }
-                    },
-                  }
-                ],
-                "_links": {
-                  "self": { "href": "/posts/2" }
-                  "authors": { "href": "/posts/2/authors" }
                 }
+              ],
+              "_links": {
+                "self": { "href": "/posts/1" },
+                "authors": { "href": "/posts/1/authors" },
               }
+            },
+            {
+              "title": "My second blog post",
+              "body":  "Lorem ipsum dolor sit amet",
+              "authors": [
+                {
+                  "name": "Author1",
+                  "_links": {
+                    "self": { "href": "/authors/1" }
+                  },
+                },
+                {
+                  "name": "Author2",
+                  "_links": {
+                    "self": { "href": "/authors/2" }
+                  },
+                }
+              ],
+              "_links": {
+                "self": { "href": "/posts/2" }
+                "authors": { "href": "/posts/2/authors" }
+              }
+            }
           ],
           "_links": {
             "self": { "href": "/posts" },
             "last_post": {"href": "/posts/1"}
+          },
+          "_meta": {
+            "type": post,
+            "total_posts": "2",
+            "editablility": {
+              "title": false,
+              "body":  true
+            }
           }
       }'
     end
 
     def post_response
       '{
-          "title": "My second blog post",
-          "body":  "Lorem ipsum dolor sit amet",
-          "authors": [
-            {
-              "name": "Author1",
-              "_links": {
-                "self": { "href": "/authors/1" }
+          "data": {
+            "title": "My second blog post",
+            "body":  "Lorem ipsum dolor sit amet",
+            "authors": [
+              {
+                "name": "Author1",
+                "_links": {
+                  "self": { "href": "/authors/1" }
+                },
               },
-            },
-            {
-              "name": "Author2",
-              "_links": {
-                "self": { "href": "/authors/2" }
-              },
-            }
-          ],
+              {
+                "name": "Author2",
+                "_links": {
+                  "self": { "href": "/authors/2" }
+                },
+              }
+            ]
+          },
           "_links": {
             "self": { "href": "/posts/1" }
             "authors": { "href": "/posts/1/authors" }
