@@ -26,10 +26,15 @@ class Spinach::Features::ApiNavigation < Spinach::FeatureSteps
   end
 
   step 'I load a single post' do
-    @post = api._links.posts._links.last_post
+    binding.pry
+    @post = api._links.posts.data[0]
+    @post = api.posts.data[0]
+    # @post = api._links.posts[0]
+    # @post = api.posts[0]
   end
 
   step 'I should be able to access it\'s title and body' do
+    binding.pry
     @post._attributes.title.wont_equal nil
     @post._attributes.body.wont_equal nil
   end

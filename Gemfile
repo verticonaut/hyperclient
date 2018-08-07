@@ -29,4 +29,6 @@ group :test do
   gem 'spinach'
   gem 'turn'
   gem 'webmock'
+  gem 'pry'
+  gem 'pry-byebug', platforms: :ruby
 end
